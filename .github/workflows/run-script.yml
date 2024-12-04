@@ -26,3 +26,9 @@ jobs:
 
     - name: Run Script
       run: python scripts/script.py
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: fractal-image
+        path: fractal.png  # Path to the image file

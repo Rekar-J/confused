@@ -29,7 +29,7 @@ def generate_fractal(xmin, xmax, ymin, ymax, width, height, max_iter):
 
 def plot_fractal(fractal, cmap="plasma"):
     """
-    Plot the fractal image.
+    Plot the fractal image and save as a file.
     """
     plt.figure(figsize=(10, 10))
     plt.imshow(fractal.T, extent=[xmin, xmax, ymin, ymax], cmap=cmap)
@@ -37,7 +37,8 @@ def plot_fractal(fractal, cmap="plasma"):
     plt.title("Mandelbrot Fractal")
     plt.xlabel("Real Part")
     plt.ylabel("Imaginary Part")
-    plt.show()
+    plt.savefig("fractal.png")  # Save the image
+    plt.close()  # Close the plot to avoid rendering in non-GUI environments
 
 # Parameters
 xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5  # Coordinate boundaries
